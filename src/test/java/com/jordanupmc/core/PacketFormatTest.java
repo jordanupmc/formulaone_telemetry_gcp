@@ -1,4 +1,4 @@
-package com.jordanupmc.integrationtest;
+package com.jordanupmc.core;
 
 import com.jordanupmc.core.Packet.*;
 import com.jordanupmc.udpserver.UdpSessionPlayer;

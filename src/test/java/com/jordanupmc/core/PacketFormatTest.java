@@ -1,6 +1,6 @@
 package com.jordanupmc.core;
 
-import com.jordanupmc.core.Packet.*;
+import com.jordanupmc.core.packet.*;
 import com.jordanupmc.udpserver.UdpSessionPlayer;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,7 @@ import java.math.BigInteger;
 import java.net.URL;
 import java.nio.ByteBuffer;
 
-import static com.jordanupmc.core.Packet.PacketId.LAP_DATA;
+import static com.jordanupmc.core.packet.PacketId.LAP_DATA;
 import static com.jordanupmc.udpserver.Server.BUFFER_BYTES_CAPACITY;
 import static com.jordanupmc.udpserver.Server.initBuffer;
 import static org.assertj.core.api.Assertions.assertThat;

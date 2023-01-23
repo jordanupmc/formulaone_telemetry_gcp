@@ -1,4 +1,4 @@
-package com.jordanupmc.core.Packet;
+package com.jordanupmc.core.packet;
 
 import java.nio.ByteBuffer;
 import java.util.List;

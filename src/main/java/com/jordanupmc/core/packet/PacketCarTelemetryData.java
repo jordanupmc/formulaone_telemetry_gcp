@@ -1,4 +1,4 @@
-package com.jordanupmc.core.Packet;
+package com.jordanupmc.core.packet;
 
 import com.jordanupmc.core.ByteBufferHelper;
 

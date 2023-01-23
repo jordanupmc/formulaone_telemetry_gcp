@@ -1,13 +1,13 @@
 package com.jordanupmc.udpserver;
 
-import com.jordanupmc.core.Packet.PacketCarTelemetryData;
-import com.jordanupmc.core.Packet.PacketMotionData;
+import com.jordanupmc.core.packet.PacketCarTelemetryData;
+import com.jordanupmc.core.packet.PacketMotionData;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
 
-import static com.jordanupmc.core.Packet.PacketMapper.mapToPacket;
+import static com.jordanupmc.core.packet.PacketMapper.mapToPacket;
 
 public class UdpServer implements Server {
 

@@ -1,7 +1,7 @@
 package com.jordanupmc.udpserver;
 
-import com.jordanupmc.core.Packet.PacketCarTelemetryData;
-import com.jordanupmc.core.Packet.PacketMotionData;
+import com.jordanupmc.core.packet.PacketCarTelemetryData;
+import com.jordanupmc.core.packet.PacketMotionData;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-import static com.jordanupmc.core.Packet.PacketMapper.mapToPacket;
+import static com.jordanupmc.core.packet.PacketMapper.mapToPacket;
 import static com.jordanupmc.udpserver.Server.BUFFER_BYTES_CAPACITY;
 
 public class UdpSessionPlayer {

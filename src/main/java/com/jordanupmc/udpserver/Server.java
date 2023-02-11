@@ -11,6 +11,7 @@ public interface Server {
 
     String HOSTNAME = "192.168.1.7";
     int PORT = 20777;
+
     static ByteBuffer receiveDatagram(DatagramChannel server, int bufferCapacity) throws IOException {
         ByteBuffer buffer = initBuffer(bufferCapacity);
         server.receive(buffer);

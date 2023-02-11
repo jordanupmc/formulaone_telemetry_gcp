@@ -4,7 +4,8 @@ import java.nio.ByteBuffer;
 
 import static com.jordanupmc.core.ByteBufferHelper.getFloat;
 import static com.jordanupmc.core.ByteBufferHelper.getUnsignedShort;
- public record CarMotionData(
+
+public record CarMotionData(
         float worldPositionX,
         float worldPositionY,
         float worldPositionZ,

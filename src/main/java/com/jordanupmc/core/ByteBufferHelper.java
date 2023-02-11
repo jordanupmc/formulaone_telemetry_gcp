@@ -7,6 +7,7 @@ public class ByteBufferHelper {
     public static short getUnsignedByte(ByteBuffer buffer) {
         return ((short) (buffer.get() & 0xff));
     }
+
     public static byte getByte(ByteBuffer buffer) {
         return buffer.get();
     }

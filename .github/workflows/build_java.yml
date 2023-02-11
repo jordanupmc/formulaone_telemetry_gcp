@@ -1,11 +1,10 @@
 name: Java CI
 
-on: [push]
+on: [ push ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 19
@@ -13,5 +12,18 @@ jobs:
         with:
           java-version: '19'
           distribution: 'temurin'
+
+      - name: setup gcloud with Pub/Sub emulator
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          install_components: 'beta,pubsub-emulator'
+
+      - name: Start Pub/Sub emulator
+        run: |
+          gcloud beta emulators pubsub start --host-port=0.0.0.0:8085 &
+
       - name: Build with Maven
+        env:
+          PUBSUB_EMULATOR_HOST: 'localhost:8085'
+          GCLOUD_PROJECT: 'helium-f1de7'
         run: mvn --batch-mode --update-snapshots verify

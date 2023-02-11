@@ -1,0 +1,256 @@
+{
+  "type": "record",
+  "name": "PacketMotionDataDTO",
+  "namespace": "com.jordanupmc.publisher.dto",
+    "fields": [
+    {
+      "name": "angularAccelerationX",
+      "type": "float"
+    },
+    {
+      "name": "angularAccelerationY",
+      "type": "float"
+    },
+    {
+      "name": "angularAccelerationZ",
+      "type": "float"
+    },
+    {
+      "name": "angularVelocityX",
+      "type": "float"
+    },
+    {
+      "name": "angularVelocityY",
+      "type": "float"
+    },
+    {
+      "name": "angularVelocityZ",
+      "type": "float"
+    },
+    {
+      "name": "carMotionData",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "CarMotionData",
+          "fields": [
+            {
+              "name": "gForceLateral",
+              "type": "float"
+            },
+            {
+              "name": "gForceLongitudinal",
+              "type": "float"
+            },
+            {
+              "name": "gForceVertical",
+              "type": "float"
+            },
+            {
+              "name": "pitch",
+              "type": "float"
+            },
+            {
+              "name": "roll",
+              "type": "float"
+            },
+            {
+              "name": "worldForwardDirX",
+              "type": "int"
+            },
+            {
+              "name": "worldForwardDirY",
+              "type": "int"
+            },
+            {
+              "name": "worldForwardDirZ",
+              "type": "int"
+            },
+            {
+              "name": "worldPositionX",
+              "type": "float"
+            },
+            {
+              "name": "worldPositionY",
+              "type": "float"
+            },
+            {
+              "name": "worldPositionZ",
+              "type": "float"
+            },
+            {
+              "name": "worldRightDirX",
+              "type": "int"
+            },
+            {
+              "name": "worldRightDirY",
+              "type": "int"
+            },
+            {
+              "name": "worldRightDirZ",
+              "type": "int"
+            },
+            {
+              "name": "worldVelocityX",
+              "type": "float"
+            },
+            {
+              "name": "worldVelocityY",
+              "type": "float"
+            },
+            {
+              "name": "worldVelocityZ",
+              "type": "float"
+            },
+            {
+              "name": "yaw",
+              "type": "float"
+            }
+          ]
+        },
+        "java-class": "java.util.List"
+      }
+    },
+    {
+      "name": "frontWheelsAngle",
+      "type": "float"
+    },
+    {
+      "name": "header",
+      "type": {
+        "type": "record",
+        "name": "PacketHeader",
+        "fields": [
+          {
+            "name": "frameIdentifier",
+            "type": "long"
+          },
+          {
+            "name": "gameMajorVersion",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "gameMinorVersion",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "packetFormat",
+            "type": "int"
+          },
+          {
+            "name": "packetId",
+            "type": {
+              "type": "enum",
+              "name": "PacketId",
+              "symbols": [
+                "MOTION",
+                "SESSION",
+                "LAP_DATA",
+                "EVENT",
+                "PARTICIPANTS",
+                "CAR_SETUPS",
+                "CAR_TELEMETRY",
+                "CAR_STATUS",
+                "FINAL_CLASSIFICATION",
+                "LOBBY_INFO",
+                "CAR_DAMAGE",
+                "SESSION_HISTORY"
+              ]
+            }
+          },
+          {
+            "name": "packetVersion",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "playerCarIndex",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "secondaryPlayerCarIndex",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "sessionTime",
+            "type": "float"
+          },
+          {
+            "name": "sessionUID",
+            "type": {
+              "type": "string",
+              "java-class": "java.math.BigInteger"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "localVelocityX",
+      "type": "float"
+    },
+    {
+      "name": "localVelocityY",
+      "type": "float"
+    },
+    {
+      "name": "localVelocityZ",
+      "type": "float"
+    },
+    {
+      "name": "suspensionAcceleration",
+      "type": {
+        "type": "array",
+        "items": "float",
+        "java-class": "java.util.List"
+      }
+    },
+    {
+      "name": "suspensionPosition",
+      "type": {
+        "type": "array",
+        "items": "float",
+        "java-class": "java.util.List"
+      }
+    },
+    {
+      "name": "suspensionVelocity",
+      "type": {
+        "type": "array",
+        "items": "float",
+        "java-class": "java.util.List"
+      }
+    },
+    {
+      "name": "wheelSlip",
+      "type": {
+        "type": "array",
+        "items": "float",
+        "java-class": "java.util.List"
+      }
+    },
+    {
+      "name": "wheelSpeed",
+      "type": {
+        "type": "array",
+        "items": "float",
+        "java-class": "java.util.List"
+      }
+    }
+  ]
+}

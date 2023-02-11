@@ -4,7 +4,8 @@ import java.nio.ByteBuffer;
 import java.util.List;
 
 import static com.jordanupmc.core.ByteBufferHelper.*;
- public record CarTelemetryData(
+
+public record CarTelemetryData(
         int speed,
         float throttle,
         float steer,

@@ -1,0 +1,226 @@
+{
+  "type": "record",
+  "name": "PacketCarTelemetryDataDTO",
+  "namespace": "com.jordanupmc.publisher.dto",
+  "fields": [
+    {
+      "name": "buttonStatus",
+      "type": "long"
+    },
+    {
+      "name": "carTelem",
+      "type": {
+        "type": "record",
+        "name": "CarTelemetryData",
+        "fields": [
+          {
+            "name": "brake",
+            "type": "float"
+          },
+          {
+            "name": "brakesTemperature",
+            "type": {
+              "type": "array",
+              "items": "int",
+              "java-class": "java.util.List"
+            }
+          },
+          {
+            "name": "clutch",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "drs",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "engineRPM",
+            "type": "int"
+          },
+          {
+            "name": "engineTemperature",
+            "type": "int"
+          },
+          {
+            "name": "gear",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Byte"
+            }
+          },
+          {
+            "name": "revLightsPercent",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "speed",
+            "type": "int"
+          },
+          {
+            "name": "steer",
+            "type": "float"
+          },
+          {
+            "name": "surfaceType",
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "int",
+                "java-class": "java.lang.Short"
+              },
+              "java-class": "java.util.List"
+            }
+          },
+          {
+            "name": "throttle",
+            "type": "float"
+          },
+          {
+            "name": "tyresInnerTemperature",
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "int",
+                "java-class": "java.lang.Short"
+              },
+              "java-class": "java.util.List"
+            }
+          },
+          {
+            "name": "tyresPressure",
+            "type": {
+              "type": "array",
+              "items": "float",
+              "java-class": "java.util.List"
+            }
+          },
+          {
+            "name": "tyresSurfaceTemperature",
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "int",
+                "java-class": "java.lang.Short"
+              },
+              "java-class": "java.util.List"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "header",
+      "type": {
+        "type": "record",
+        "name": "PacketHeader",
+        "fields": [
+          {
+            "name": "frameIdentifier",
+            "type": "long"
+          },
+          {
+            "name": "gameMajorVersion",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "gameMinorVersion",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "packetFormat",
+            "type": "int"
+          },
+          {
+            "name": "packetId",
+            "type": {
+              "type": "enum",
+              "name": "PacketId",
+              "symbols": [
+                "MOTION",
+                "SESSION",
+                "LAP_DATA",
+                "EVENT",
+                "PARTICIPANTS",
+                "CAR_SETUPS",
+                "CAR_TELEMETRY",
+                "CAR_STATUS",
+                "FINAL_CLASSIFICATION",
+                "LOBBY_INFO",
+                "CAR_DAMAGE",
+                "SESSION_HISTORY"
+              ]
+            }
+          },
+          {
+            "name": "packetVersion",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "playerCarIndex",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "secondaryPlayerCarIndex",
+            "type": {
+              "type": "int",
+              "java-class": "java.lang.Short"
+            }
+          },
+          {
+            "name": "sessionTime",
+            "type": "float"
+          },
+          {
+            "name": "sessionUID",
+            "type": {
+              "type": "string",
+              "java-class": "java.math.BigInteger"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "mfdPanelIndex",
+      "type": {
+        "type": "int",
+        "java-class": "java.lang.Short"
+      }
+    },
+    {
+      "name": "mfdPanelIndexSecondaryPlayer",
+      "type": {
+        "type": "int",
+        "java-class": "java.lang.Short"
+      }
+    },
+    {
+      "name": "uggestedGear",
+      "type": {
+        "type": "int",
+        "java-class": "java.lang.Short"
+      }
+    }
+  ]
+}

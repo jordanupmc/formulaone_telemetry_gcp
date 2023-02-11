@@ -27,12 +27,9 @@ public enum PacketId {
     }
 
     static PacketId valueFrom(short id) {
-        var value = Arrays.stream(PacketId.values())
+        return Arrays.stream(PacketId.values())
                 .filter(packetId -> packetId.id == id)
-                .findFirst();
-        if (value.isEmpty()) {
-            throw new IllegalArgumentException("Unknown id " + id);
-        }
-        return value.get();
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Unknown id " + id));
     }
 }

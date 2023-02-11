@@ -2,6 +2,7 @@ package com.jordanupmc.udpserver;
 
 import com.jordanupmc.core.packet.PacketCarTelemetryData;
 import com.jordanupmc.core.packet.PacketMotionData;
+import com.jordanupmc.publisher.PacketPublisherFactory;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -10,8 +11,6 @@ import java.nio.channels.DatagramChannel;
 import static com.jordanupmc.core.packet.PacketMapper.mapToPacket;
 
 public class UdpServer implements Server {
-
-
     public static void main(String[] args) {
         try (var datagramChannel = Server.startServer(HOSTNAME, PORT)) {
             while (true) {
@@ -28,11 +27,9 @@ public class UdpServer implements Server {
             case null -> {
             }
             case PacketMotionData motionData ->
-                    System.out.println("F1 2020 client sent: world position X = " +
-                            motionData.carMotionData().get(motionData.header().playerCarIndex()).worldPositionX() + " playerIndex = " + motionData.header().playerCarIndex());
+                    PacketPublisherFactory.getPacketPublisher(motionData).publish(motionData);
             case PacketCarTelemetryData telemetryData ->
-                    System.out.println("F1 2020 client sent: speed = " + telemetryData.carTelem().speed() +
-                            " playerIndex = " + telemetryData.header().playerCarIndex());
+                    PacketPublisherFactory.getPacketPublisher(telemetryData).publish(telemetryData);
         }
     }
 }

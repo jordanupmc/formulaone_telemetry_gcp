@@ -3,7 +3,7 @@ package com.jordanupmc.core.packet;
 import java.nio.ByteBuffer;
 
 public class PacketMapper {
-    private PacketMapper(){
+    private PacketMapper() {
 
     }
 
